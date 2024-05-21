@@ -46,7 +46,7 @@ namespace Data.Migrations
 
                     b.HasKey("Email");
 
-                    b.ToTable("Subscribers");
+                    b.ToTable("Subscribers", (string)null);
                 });
 #pragma warning restore 612, 618
         }

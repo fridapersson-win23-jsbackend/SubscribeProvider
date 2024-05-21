@@ -32,10 +32,12 @@ namespace SubscribeProvider.Functions
                             await _context.SaveChangesAsync();
                             return new OkObjectResult(new { Status = 200, Message = "Subscriber was updated" });
                         }
-
-                        _context.Subscribers.Add(subscribeEntity);
-                        await _context.SaveChangesAsync();
-                        return new OkObjectResult(new { Status = 200, Message = "Subscriber is now subscribed" });
+                        else
+                        {
+                            _context.Subscribers.Add(subscribeEntity);
+                            await _context.SaveChangesAsync();
+                            return new OkObjectResult(new { Status = 200, Message = "Subscriber is now subscribed" });
+                        }
                     }
                 }
             }
